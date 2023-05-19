@@ -1,0 +1,21 @@
+body {
+    height: 100%;
+    margin: 0;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: $default_text_color;
+    background-color: #F2F3F8;
+}
+
+a {
+    color: $main_color;
+
+    &:hover {
+        color: $main_color_hover;
+    }
+
+    &:active {
+        color: $main_color_active;
+    }
+}
