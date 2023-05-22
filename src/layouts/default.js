@@ -1,15 +1,13 @@
 import React, { useEffect }  from 'react';
 import { Outlet } from 'react-router';
 
-import styles from '../assets/scss/layouts/default.module.scss';
+import Navbar from '../components/navbar';
 
 function DefaultLayout() {
-    useEffect(() => {
-    }, [])
-
     return (
         <>
-            <h1>Title</h1>
+            <Navbar />
+            
             <Outlet />
         </>
     )

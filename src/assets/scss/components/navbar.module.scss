@@ -1,0 +1,53 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+
+  padding: 0;
+
+  --bs-navbar-active-color: #FFFFFF;
+
+  > div {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
+  .logo {
+    color: #FFFFFF;
+    font-size: 20px;
+    font-weight: 300;
+    line-height: 93px;
+    padding: 0;
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+    -webkit-transition: line-height 0.4s ease 0s;
+    -khtml-transition: line-height 0.4s ease 0s;
+    -moz-transition: line-height 0.4s ease 0s;
+    -ms-transition: line-height 0.4s ease 0s;
+    -o-transition: line-height 0.4s ease 0s;
+    transition: line-height 0.4s ease 0s;
+  }
+
+  .link {
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 20px;
+    margin: 17px 12px;
+    padding: 16px 3px 5px !important;
+    letter-spacing: 1px;
+    border-bottom: 2px solid transparent;
+    -webkit-transition: all 0.3s ease 0s;
+    -khtml-transition: all 0.3s ease 0s;
+    -moz-transition: all 0.3s ease 0s;
+    -ms-transition: all 0.3s ease 0s;
+    -o-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+
+    :global(.active) {
+        border-color: #FFFFFF !important;
+    }
+  }
+}
