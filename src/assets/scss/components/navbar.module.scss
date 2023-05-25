@@ -1,5 +1,5 @@
 .navbar {
-  position: fixed;
+  position: fixed !important;
   top: 0;
   left: 0;
   right: 0;
@@ -7,7 +7,7 @@
 
   padding: 0;
 
-  --bs-navbar-active-color: #FFFFFF;
+  --bs-navbar-active-color: #FFFFFF !important;
 
   > div {
     padding-left: 30px;
@@ -46,7 +46,7 @@
     -o-transition: all 0.3s ease 0s;
     transition: all 0.3s ease 0s;
 
-    :global(.active) {
+    &:global(.active) {
         border-color: #FFFFFF !important;
     }
   }
