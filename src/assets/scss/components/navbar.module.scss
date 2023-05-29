@@ -5,9 +5,20 @@
   right: 0;
   z-index: 1;
 
-  padding: 0;
+  padding: 0 !important;
+
+  transition: all 0.35s ease-in-out;
 
   --bs-navbar-active-color: #FFFFFF !important;
+
+    &:global(.dark) {
+        background-color: #2a2b2f;
+
+        .logo {
+            line-height: 70px;
+        }
+    }
+    
 
   > div {
     padding-left: 30px;
@@ -23,11 +34,6 @@
     display: inline-block;
     position: relative;
     z-index: 1;
-    -webkit-transition: line-height 0.4s ease 0s;
-    -khtml-transition: line-height 0.4s ease 0s;
-    -moz-transition: line-height 0.4s ease 0s;
-    -ms-transition: line-height 0.4s ease 0s;
-    -o-transition: line-height 0.4s ease 0s;
     transition: line-height 0.4s ease 0s;
   }
 
@@ -36,14 +42,9 @@
     font-weight: 300;
     line-height: 20px;
     margin: 17px 12px;
-    padding: 16px 3px 5px !important;
+    padding: 7px 3px 5px !important;
     letter-spacing: 1px;
     border-bottom: 2px solid transparent;
-    -webkit-transition: all 0.3s ease 0s;
-    -khtml-transition: all 0.3s ease 0s;
-    -moz-transition: all 0.3s ease 0s;
-    -ms-transition: all 0.3s ease 0s;
-    -o-transition: all 0.3s ease 0s;
     transition: all 0.3s ease 0s;
 
     &:global(.active) {
