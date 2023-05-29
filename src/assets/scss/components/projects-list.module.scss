@@ -2,7 +2,16 @@
 @use "../variables" as var;
 
 .item {
-    padding: 40px 0;
+    padding: 40px 0 0 0;
+
+    hr {
+        margin-top: 60px;
+        margin-bottom: 20px;
+    }
+
+    a {
+        text-decoration: none !important;
+    }
 
     .image {
         width: 100%;
@@ -19,6 +28,8 @@
             letter-spacing: 1px;
 
             margin-bottom: 20px;
+
+            transition: color 0.35s ease-in-out;
         }
 
         .description {
@@ -28,22 +39,16 @@
             letter-spacing: 1px;
         }
 
-        &:global(.order-first) {
-            padding: 30px 40px 60px 0;
-
-            .button {
-                right: 40px;
-            }
-        }
-
         .button {
             position: absolute;
             bottom: 30px;
             right: 0;
 
-            font-size: 18px;
-            font-weight: 400;
+            font-size: 16px;
+            font-weight: 300;
             line-height: 28px;
+
+            transition: color 0.35s ease-in-out;
             
             &::after {
                 display: inline-block;
@@ -58,5 +63,28 @@
             }
         }
 
+    }
+}
+
+
+@media (max-width: var.$breakpoint-phone) {
+    .item {
+        .info {
+            padding: 30px 15px 70px 15px !important;
+        }
+    }
+}
+
+@media (min-width: var.$breakpoint-tablet) {
+    .item {
+        .info {
+            &:global(.order-lg-first) {
+                padding: 30px 40px 60px 0;
+    
+                .button {
+                    right: 40px;
+                }
+            }
+        }
     }
 }
