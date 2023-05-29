@@ -1,10 +1,11 @@
 h1 {
-    color: $main_color;
-    font-size: 16px;
-    font-weight: 600;
-    line-height: 26px;
+    color: $default_text_color;
+    color: #2a2b2f;
+    font-size: 32px;
+    font-weight: 300;
+    line-height: 40px;
     letter-spacing: 0.5px;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
 }
 
 h2 {
@@ -17,7 +18,7 @@ h2 {
 }
 
 p {
-    color: $default_text_color;
+    color: $light_text_color;
     font-style: 400;
     font-size: 12px;
     line-height: 22px;
