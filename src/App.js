@@ -6,6 +6,7 @@ import DefaultLayout from "./layouts/default";
 
 // Pages
 import Home from "./pages/home";
+import PortfolioItem from "./pages/portfolio-item";
 
 
 function App() {
@@ -17,7 +18,7 @@ function App() {
       <Routes>
         <Route path="/" element={<DefaultLayout />}>
           <Route index element={<Home />} />
-          {/*<Route path="url" element={<Home />} />*/}
+          <Route path="/:url" element={<PortfolioItem />} />
         </Route>
       </Routes>
     </div>
