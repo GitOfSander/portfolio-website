@@ -1,0 +1,65 @@
+.wrapper {
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+.stats {
+    font-size: 14px;
+    line-height: 26px;
+
+    > div {
+        margin-bottom: 7px;
+    }
+
+    label {
+        display: block;
+        font-weight: 600;
+        letter-spacing: 1px;
+    }
+
+    span {
+        display: block;
+    }
+}
+
+.slider {
+    position: relative;
+
+    .slide {
+        img {
+            width: 100%;
+        }
+    }
+
+    .arrows {
+        > button {
+            font-family: bootstrap-icons !important;
+            color: #FFFFFF;
+            font-size: 50px;
+            font-weight: 300;
+            line-height: 50px;
+    
+            padding: 0;
+            border: 0;
+            box-shadow: none;
+        }
+
+        .left {
+            left: 1em;
+
+            &::after {
+                display: inline-block;
+                content: '\F284';
+            }
+        }
+
+        .right {
+            right: 1em;
+
+            &::after {
+                display: inline-block;
+                content: '\F285';
+            }
+        }
+    }
+}
