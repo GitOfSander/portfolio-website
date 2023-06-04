@@ -1,0 +1,37 @@
+@use "../variables" as var;
+
+.full_picture_modal {
+    --bs-modal-width: 1000px !important;
+    --bs-modal-bg: transparent !important;
+    --bs-modal-header-padding: 0 !important;
+
+    .content {
+        .header {
+            button {
+                position: absolute;
+                top: 20px;
+                right: 20px;
+                z-index: 1;
+
+                color: rgba(255,255,255,0.5);
+                font-size: 30px;
+                line-height: 30px;
+                
+                width: 60px;
+                height: 60px;
+                padding: 0;
+
+                border: 0;
+                background: none;
+            }
+        }
+
+        .body {
+            --bs-modal-padding: 0px !important;
+
+            img {
+                width: 100%;
+            }
+        }
+    }
+}

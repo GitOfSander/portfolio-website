@@ -1,16 +1,18 @@
-import React, { useEffect, useState } from 'react';
-import Glide, { Controls } from '@glidejs/glide/dist/glide.modular.esm'
+import React, { useEffect, useRef, useState } from 'react';
+import Glide, { Swipe, Controls } from '@glidejs/glide/dist/glide.modular.esm'
 
 import projectService from '../services/project.service';
 
 import styles from '../assets/scss/pages/portfolio-item.module.scss';
 import Header from '../components/header';
+import Modal from '../components/modal';
 
 
 function PortfolioItem() {
     const [pageTitle, setPageTitle] = useState()
     const [breadcrumbs, setBreadcrumbs] = useState()
     const [itemData, setItemData] = useState()
+    const modalRef = useRef()
 
 
     useEffect(() => {
@@ -31,8 +33,7 @@ function PortfolioItem() {
     useEffect(() => {
         let i = 0
         while(i < itemData?.sliders.length) {
-            new Glide('.glide_' + i).mount({ Controls })
-            console.log(document.querySelector(".glide_" + i))
+            new Glide('.glide_' + i).mount({ Swipe, Controls })
             i++
         }
     }, [itemData])
@@ -74,8 +75,7 @@ function PortfolioItem() {
                     <div className='col-12'>
                         { itemData?.sliders.map((item, index) => (
                             <div key={ index } className='row mb-5'>
-                                {console.log(item.type)}
-                                <div className={ item.type == 'fullwidth' ? 'col-12 mb-3' : (item.type == '6/6' ? 'col-6' : 'col-8') }>
+                                <div className={ item.type == 'fullwidth' ? 'col-12 mb-3' : (item.type == '6/6' ? 'col-6 align-self-center' : 'col-8 align-self-center') }>
                                     <h2>{ item.title }</h2>
                                     <p>{ item.description }</p>
                                 </div>
@@ -84,7 +84,7 @@ function PortfolioItem() {
                                         <div className='glide__track' data-glide-el='track'>
                                             <ul className='glide__slides'>
                                                 { item.images.map((item, index) => (
-                                                    <li key={ index } className={ styles.slide + ' glide__slide' }><img src={ item } /></li>
+                                                    <li key={ index } className={ styles.slide + ' glide__slide' } onClick={ () => modalRef.current.open({ 'image': item }) }><img src={ item } /></li>
                                                 )) }
                                             </ul>
                                         </div>
@@ -100,6 +100,8 @@ function PortfolioItem() {
                     </div>
                 </div>
             </div>
+
+            <Modal ref={ modalRef } type='full_picture' />
         </>
     )
 }
