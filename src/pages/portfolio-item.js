@@ -38,6 +38,37 @@ function PortfolioItem() {
         }
     }, [itemData])
 
+    function columnClass(slider, section) {
+        var classes = []
+        var isText = (section == 'text')
+
+        switch(slider.type){
+            case 'fullwidth':
+                isText ? classes.push('col-12 mb-3') : classes.push('col-12')
+                break;
+            case '6/6': 
+                isText ? classes.push('col-5 align-self-center') : classes.push('col-6')
+                break;
+            case '4/8':
+                isText ? classes.push('col-4 align-self-center') : classes.push('col-4')
+                break;
+        }
+
+        if (!isText && 
+            slider.type != 'fullwidth' &&
+            slider.picture_position == 'left') {
+                classes.push('order-lg-first')
+            }
+
+        if (isText &&
+            slider.type != 'fullwidth' &&
+            slider.picture_position == 'right') {
+                slider.type == '6/6' ? classes.push('offset-lg-1') : classes.push('offset-lg-4')
+            }
+
+        return classes.join(' ')
+    }
+
     return(
         <>
             <Header title={ pageTitle } breadcrumbs={ breadcrumbs } />
@@ -75,11 +106,12 @@ function PortfolioItem() {
                     <div className='col-12'>
                         { itemData?.sliders.map((item, index) => (
                             <div key={ index } className='row mb-5'>
-                                <div className={ item.type == 'fullwidth' ? 'col-12 mb-3' : (item.type == '6/6' ? 'col-6 align-self-center' : 'col-8 align-self-center') }>
+                                <div className={ columnClass(item, 'text') }>
                                     <h2>{ item.title }</h2>
                                     <p>{ item.description }</p>
                                 </div>
-                                <div className={ item.type == 'fullwidth' ? 'col-12' : (item.type == '6/6' ? 'order-first col-6' : 'order-first col-4') }>
+
+                                <div className={ columnClass(item, 'picture') }>
                                     <div className={ styles.slider + ' glide_' + index }>
                                         <div className='glide__track' data-glide-el='track'>
                                             <ul className='glide__slides'>
