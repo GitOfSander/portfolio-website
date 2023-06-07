@@ -1,19 +1,16 @@
 import React, { useEffect, useRef, useState } from 'react';
-import Glide, { Swipe, Controls } from '@glidejs/glide/dist/glide.modular.esm'
 
 import projectService from '../services/project.service';
 
 import styles from '../assets/scss/pages/portfolio-item.module.scss';
 import Header from '../components/header';
-import Modal from '../components/modal';
+import Carousel from '../components/carousel';
 
 
 function PortfolioItem() {
     const [pageTitle, setPageTitle] = useState()
     const [breadcrumbs, setBreadcrumbs] = useState()
     const [itemData, setItemData] = useState()
-    const modalRef = useRef()
-
 
     useEffect(() => {
         async function getItem() {
@@ -30,13 +27,13 @@ function PortfolioItem() {
         getItem()
     }, [])
 
-    useEffect(() => {
+    /*useEffect(() => {
         let i = 0
         while(i < itemData?.sliders.length) {
             new Glide('.glide_' + i).mount({ Swipe, Controls })
             i++
         }
-    }, [itemData])
+    }, [itemData])*/
 
     function columnClass(slider, section) {
         var classes = []
@@ -112,28 +109,13 @@ function PortfolioItem() {
                                 </div>
 
                                 <div className={ columnClass(item, 'picture') }>
-                                    <div className={ styles.slider + ' glide_' + index }>
-                                        <div className='glide__track' data-glide-el='track'>
-                                            <ul className='glide__slides'>
-                                                { item.images.map((item, index) => (
-                                                    <li key={ index } className={ styles.slide + ' glide__slide' } onClick={ () => modalRef.current.open({ 'image': item }) }><img src={ item } /></li>
-                                                )) }
-                                            </ul>
-                                        </div>
-
-                                        <div className={ styles.arrows + ' glide__arrows' } data-glide-el='controls'>
-                                            <button className={ styles.left + ' glide__arrow glide__arrow--left' } data-glide-dir='<'></button>
-                                            <button className={ styles.right + ' glide__arrow glide__arrow--right' } data-glide-dir='>'></button>
-                                        </div>
-                                    </div>
+                                    <Carousel images={ item.images } />
                                 </div>
                              </div>
                         )) }
                     </div>
                 </div>
             </div>
-
-            <Modal ref={ modalRef } type='full_picture' />
         </>
     )
 }
