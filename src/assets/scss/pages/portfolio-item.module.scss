@@ -1,3 +1,5 @@
+@use "../variables" as var;
+
 .wrapper {
     padding-top: 100px;
     padding-bottom: 100px;
@@ -35,9 +37,9 @@
         > button {
             font-family: bootstrap-icons !important;
             color: #FFFFFF;
-            font-size: 50px;
+            font-size: 35px;
             font-weight: 300;
-            line-height: 50px;
+            line-height: 35px;
     
             padding: 0;
             border: 0;
@@ -45,7 +47,7 @@
         }
 
         .left {
-            left: 1em;
+            left: 1rem;
 
             &::after {
                 display: inline-block;
@@ -54,11 +56,22 @@
         }
 
         .right {
-            right: 1em;
+            right: 1rem;
 
             &::after {
                 display: inline-block;
                 content: '\F285';
+            }
+        }
+    }
+}
+
+@media (max-width: var.$breakpoint-tablet) and (min-width: var.$breakpoint-phone) {
+    .slider {
+        .arrows {
+            > button {
+                font-size: 25px;
+                line-height: 25px;
             }
         }
     }

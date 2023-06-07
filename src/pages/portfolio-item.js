@@ -47,23 +47,23 @@ function PortfolioItem() {
                 isText ? classes.push('col-12 mb-3') : classes.push('col-12')
                 break;
             case '6/6': 
-                isText ? classes.push('col-5 align-self-center') : classes.push('col-6')
+                isText ? classes.push('col-md-5 mb-md-0 mb-3 align-self-center') : classes.push('col-md-6')
                 break;
             case '4/8':
-                isText ? classes.push('col-4 align-self-center') : classes.push('col-4')
+                isText ? classes.push('col-md-4 mb-md-0 mb-3 align-self-center') : classes.push('col-md-4')
                 break;
         }
 
         if (!isText && 
             slider.type != 'fullwidth' &&
             slider.picture_position == 'left') {
-                classes.push('order-lg-first')
+                classes.push('order-md-first')
             }
 
         if (isText &&
             slider.type != 'fullwidth' &&
             slider.picture_position == 'right') {
-                slider.type == '6/6' ? classes.push('offset-lg-1') : classes.push('offset-lg-4')
+                slider.type == '6/6' ? classes.push('offset-md-1') : classes.push('offset-md-4')
             }
 
         return classes.join(' ')
@@ -75,7 +75,7 @@ function PortfolioItem() {
 
             <div className={ styles.wrapper + ' container' }>
                 <div className='row mb-5'>
-                    <div className={ styles.stats + ' col-lg-3' }>
+                    <div className={ styles.stats + ' col-lg-3 col-md-4 mb-md-0 mb-5' }>
                         { itemData?.client && <div className='row'>
                             <label className='col-4'>Client:</label>
                             <span className='col-8'>{ itemData.client }</span>
@@ -93,7 +93,7 @@ function PortfolioItem() {
                             <span className='col-8'>{ itemData?.demo }</span>
                         </div> }
                     </div>
-                    <div className='offset-lg-1 col-lg-8'>
+                    <div className='offset-lg-1 col-md-8'>
                         <div className='row'>
                             <div className='col-12'>
                                 <p>{ itemData?.description }</p>
