@@ -4,6 +4,7 @@ import { BrowserRouter as Router } from "react-router-dom"
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 
+import "bootstrap-icons/font/bootstrap-icons.scss";
 import "bootstrap/scss/bootstrap.scss";
 import "./assets/scss/stylesheet.scss";
 
