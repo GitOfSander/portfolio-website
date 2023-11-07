@@ -5,16 +5,18 @@ import projectService from '../services/project.service';
 import styles from '../assets/scss/pages/portfolio-item.module.scss';
 import Header from '../components/header';
 import Carousel from '../components/carousel';
+import { useLocation } from 'react-router-dom';
 
 
 function PortfolioItem() {
+    const location = useLocation()
     const [pageTitle, setPageTitle] = useState()
     const [breadcrumbs, setBreadcrumbs] = useState()
     const [itemData, setItemData] = useState()
 
     useEffect(() => {
         async function getItem() {
-            let response = await projectService.getProject('test')
+            let response = await projectService.getProject(location.pathname.replace('/', ''))
             
             setItemData(response)
             setPageTitle(response.title)
@@ -41,7 +43,7 @@ function PortfolioItem() {
 
         switch(slider.type){
             case 'fullwidth':
-                isText ? classes.push('col-12 mb-3') : classes.push('col-12')
+                isText ? classes.push('col-lg-6 col-12 mb-3') : classes.push('col-12')
                 break;
             case '6/6': 
                 isText ? classes.push('col-md-5 mb-md-0 mb-3 align-self-center') : classes.push('col-md-6')

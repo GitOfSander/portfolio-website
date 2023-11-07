@@ -1,4 +1,3 @@
-
 @use "../variables" as var;
 
 .item {
@@ -14,12 +13,15 @@
     }
 
     .image {
-        width: 100%;
+        background-size: 100% auto;
+        background-repeat: no-repeat;
+        background-position: center;
     }
 
     .info {
         position: relative;
-        padding: 30px 0 60px 40px;
+        min-height: 300px;
+        padding: 30px 0 85px 40px;
 
         .title {
             font-size: 24px;
@@ -71,6 +73,20 @@
     .item {
         .info {
             padding: 30px 15px 70px 15px !important;
+
+            .button {
+                right: 15px;
+            }
+        }
+    }
+}
+
+@media (max-width: var.$breakpoint-tablet) {
+    .item {
+        .info {
+            .button {
+                bottom: 0;
+            }
         }
     }
 }

@@ -4,7 +4,6 @@ const API_URL = '/'
 
 class ProjectService {
   getProject(path) {
-    let project = null
     return this.getProjects().then(
         response => {
           return response.find(obj => obj.path == path)

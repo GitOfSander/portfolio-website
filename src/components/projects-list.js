@@ -22,15 +22,13 @@ const ProjectsList = () => {
         <>
             { items.map((item, index) => (
                 <div key={ index } className={ styles.item }>
-                    { console.log(item) }
                     <Link to={ item.path }>
                         <div className='row'>
-                            <div className='col-lg-4 col-md-6'>
-                                <img className={ styles.image } src={ item.thumbnail } />
+                            <div className={ styles.image + ' col-lg-4 col-md-6' } style={{ backgroundImage: 'url("' + item.thumbnail + '")'}}>
                             </div>
                             <div className={ styles.info + ' col-lg-5 col-md-6' + (index%2!=0 ? ' order-lg-first offset-lg-3' : '') }>
                                 <h3 className={ styles.title }>{ item.title }</h3>
-                                <p className={ styles.description }>{ item.description }</p>
+                                <p className={ styles.description }>{ item.short_description }</p>
                                 <span className={ styles.button }>BEKIJK PROJECT</span>
                             </div>
                         </div>

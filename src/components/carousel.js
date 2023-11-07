@@ -1,5 +1,5 @@
 import React, { forwardRef, useEffect, useImperativeHandle, useRef, useState } from 'react';
-import Glide, { Swipe, Controls } from '@glidejs/glide/dist/glide.modular.esm';
+import Glide, { Swipe, Controls, Autoplay } from '@glidejs/glide/dist/glide.modular.esm';
 
 import Modal from '../components/modal';
 
@@ -10,14 +10,14 @@ const Carousel = (props) => {
     const modalRef = useRef()
 
     useEffect(() => {
-        new Glide(ref.current).mount({ Swipe, Controls })
+        new Glide(ref.current, { autoplay: 5000 }).mount({ Swipe, Controls, Autoplay })
     }, [])
 
     return(
         <>
             <div className={ styles.slider } ref={ ref }>
                 <div className='glide__track' data-glide-el='track'>
-                    <ul className='glide__slides'>
+                    <ul className={ styles.slides + ' glide__slides' }>
                         { props.images.map((item, index) => (
                             <li key={ index } className={ styles.slide + ' glide__slide' } onClick={ () => modalRef.current.open({ 'image': item }) }><img src={ item } /></li>
                         )) }
