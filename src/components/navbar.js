@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 
 import styles from '../assets/scss/components/navbar.module.scss';
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
     const [scroll, setScroll] = useState(false);
@@ -24,8 +25,8 @@ const Navbar = () => {
                 </button>
                 <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <div className="navbar-nav ms-auto">
-                        <a className={ styles.link + " nav-link" } aria-current="page" to="/">Home</a>
-                        <a className={ styles.link + " nav-link" } aria-current="page" to="/repositories">Repositories</a>
+                        <Link className={ styles.link + " nav-link" } to="/">Home</Link>
+                        <Link className={ styles.link + " nav-link" } to="/repositories">Repositories</Link>
                     </div>
                 </div>
             </div>

@@ -15,7 +15,7 @@ const GitHub = (props) => {
     const fetchData = () => {
         return fetch(`https://api.github.com/users/${GITHUB_USER}/repos`)
           .then((response) => response.json())
-          .then((data) => setGitHubData(data));
+          .then((data) => setGitHubData(data.sort((a, b) => new Date(a.updated_at) - new Date(b.updated_at)).reverse()));
     }
 
     useEffect(() => {
@@ -24,7 +24,7 @@ const GitHub = (props) => {
 
     return(
         <>
-            { gitHubData.sort((a, b) => a.updated_at - b.updated_at).map((item, index) => (
+            { gitHubData.map((item, index) => (
                 <div key={ index } className={ styles.item + ' col-md-6' }>
                     <div>
                         <h3><a href={ item.html_url } target="_blank">{ item.name }</a></h3>
