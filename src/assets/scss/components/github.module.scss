@@ -1,0 +1,41 @@
+@use "../variables" as var;
+
+.item {
+    --margin: 15px;
+
+    margin-top: var(--margin) !important;
+    margin-bottom: var(--margin);
+
+    div {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        overflow: hidden;
+
+        height: 100%;
+        padding: 10px 15px;
+    
+        border: 1px solid #bbbbbb;
+        border-radius: 10px;
+
+        h3 {
+            margin-bottom: 7px;
+
+            a {
+                text-decoration: none;
+            }
+        }
+
+
+
+        .language {
+            align-self: flex-end;
+            
+            padding: 3px 5px;
+            margin-top: auto;
+
+            background-color: var.$main_light_color;
+            border-radius: 4px;
+        }
+    }
+}

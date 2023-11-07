@@ -24,7 +24,8 @@ const Navbar = () => {
                 </button>
                 <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <div className="navbar-nav ms-auto">
-                        <a className={ styles.link + " nav-link active" } aria-current="page" href="#">Mijn Portfolio</a>
+                        <a className={ styles.link + " nav-link" } aria-current="page" to="/">Home</a>
+                        <a className={ styles.link + " nav-link" } aria-current="page" to="/repositories">Repositories</a>
                     </div>
                 </div>
             </div>
