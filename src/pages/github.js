@@ -5,10 +5,7 @@ import Header from '../components/header';
 import GitHub from '../components/github';
 
 const PAGE_TITLE = "Repositories";
-const BREADCRUMBS = [{
-        "label": "Github",
-        "Link": "/"
-    }];
+const BREADCRUMBS = [];
 
 function Repositories() {
     useEffect(() => {

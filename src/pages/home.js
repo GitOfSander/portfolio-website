@@ -4,11 +4,8 @@ import styles from '../assets/scss/pages/home.module.scss';
 import Header from '../components/header';
 import ProjectsList from '../components/projects-list';
 
-const PAGE_TITLE = "Mijn Portfolio";
-const BREADCRUMBS = [{
-        "label": "Home",
-        "Link": "/"
-    }];
+const PAGE_TITLE = "Projecten";
+const BREADCRUMBS = [];
 
 function Home() {
     useEffect(() => {
@@ -20,9 +17,9 @@ function Home() {
 
             <div className={ styles.wrapper + ' container' }>
                 <div className='row'>
-                    <div className='col-12'>
-                        <h1>Sander Pals</h1>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    <div className='col-lg-5 col-12'>
+                        <h1>Projecten</h1>
+                        <p>Hierbij presenteer ik een uitgebreid overzicht van de diverse projecten waaraan ik de afgelopen jaren met toewijding en vakmanschap heb bijgedragen en ontwikkeld.</p>
                     </div>
                 </div>
 

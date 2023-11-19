@@ -1,5 +1,6 @@
 import React, { forwardRef, useEffect, useImperativeHandle, useRef, useState } from 'react';
 import Glide, { Swipe, Controls, Autoplay } from '@glidejs/glide/dist/glide.modular.esm';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 import Modal from '../components/modal';
 
@@ -19,7 +20,9 @@ const Carousel = (props) => {
                 <div className='glide__track' data-glide-el='track'>
                     <ul className={ styles.slides + ' glide__slides' }>
                         { props.images.map((item, index) => (
-                            <li key={ index } className={ styles.slide + ' glide__slide' } onClick={ () => modalRef.current.open({ 'image': item }) }><img src={ item } /></li>
+                            <li key={ index } className={ styles.slide + ' glide__slide' } onClick={ () => modalRef.current.open({ 'image': item }) }>
+                                <LazyLoadImage src={ item } />
+                            </li>
                         )) }
                     </ul>
                 </div>

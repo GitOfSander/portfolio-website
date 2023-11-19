@@ -17,6 +17,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.43.9",
+    "react-lazy-load-image-component": "^1.6.0",
     "react-router-dom": "^6.11.1",
     "react-scripts": "5.0.1",
     "resize-observer-polyfill": "^1.5.1",

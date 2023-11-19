@@ -21,8 +21,8 @@ function PortfolioItem() {
             setItemData(response)
             setPageTitle(response.title)
             setBreadcrumbs([{
-                "label": "Home",
-                "Link": "/"
+                "label": "Projecten",
+                "link": "/"
             }])
         }
         

@@ -13,9 +13,14 @@
     }
 
     .image {
-        background-size: 100% auto;
-        background-repeat: no-repeat;
-        background-position: center;
+        overflow: hidden;
+
+        min-height: 300px;
+        max-height: 300px;
+        
+        img {
+            width: 100%;
+        }
     }
 
     .info {
@@ -51,12 +56,19 @@
             line-height: 28px;
 
             transition: color 0.35s ease-in-out;
+
+            &::before {
+                content: "/";
+                color: #df9100;
+                font-weight: 600;
+                margin-right: 3px;
+            }
             
             &::after {
                 display: inline-block;
                 font-family: bootstrap-icons !important;
                 content: '\F138';
-                color: var.$main_color;
+                color: #df9100;
                 font-size: 14px;
                 font-weight: 300;
 
@@ -65,19 +77,6 @@
             }
         }
 
-    }
-}
-
-
-@media (max-width: var.$breakpoint-phone) {
-    .item {
-        .info {
-            padding: 30px 15px 70px 15px !important;
-
-            .button {
-                right: 15px;
-            }
-        }
     }
 }
 
@@ -100,6 +99,19 @@
                 .button {
                     right: 40px;
                 }
+            }
+        }
+    }
+}
+
+@media (max-width: var.$breakpoint-phone) {
+    .item {
+        .info {
+            padding: 30px 15px 70px 15px !important;
+            min-height: auto;
+
+            .button {
+                right: 15px;
             }
         }
     }

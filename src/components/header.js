@@ -9,20 +9,20 @@ const Header = (props) => {
         <div className={ styles.header }>
             <div className="container">
                 <div className={ styles.text }>
-                    <h1>{ props.title }</h1>
-
-                    { breadcrumbs &&
+                    { breadcrumbs && 
                         <div className={ styles.breadcrumbs }>
                             <ul>
-                                <li><a href="LINK">Home</a></li>
-                                <li>Portfolio item</li>
+                                { breadcrumbs.map((item, index) => (
+                                    <li key={ index }><a href={ item.link }>{ item.label }</a></li>
+                                ))}
                             </ul>
                         </div>
                     }
+                    <h1>{ props.title }</h1>
                 </div>
             </div>
         </div>
     )
 }
-  
+
 export default Header
